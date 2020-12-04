@@ -3,6 +3,7 @@ import { createContext, useState, useCallback, useContext } from 'react';
 type AuthContextData = {
   username?: string;
   login: (id: string) => Promise<void>;
+  loginWithUsername: (username: string) => void;
   logout: () => void;
 };
 
@@ -25,12 +26,18 @@ const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
     setUsername(result.user);
   }, []);
 
+  const loginWithUsername = useCallback((user: string) => {
+    setUsername(user);
+  }, []);
+
   const logout = useCallback(() => {
     setUsername(undefined);
   }, []);
 
   return (
-    <AuthContext.Provider value={{ username, login, logout }}>
+    <AuthContext.Provider
+      value={{ username, login, loginWithUsername, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );

@@ -1,4 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+import { MessageType } from '.';
 
 export const Container = styled.main`
   margin: 0 auto;
@@ -29,4 +31,30 @@ export const Form = styled.form`
   button {
     margin-top: 40px;
   }
+`;
+
+type MessageContainerProps = {
+  type: MessageType;
+};
+
+const messageContainerModifiers = {
+  error: () => css`
+    background-color: #e85f5f;
+    border: 1px solid #c53030;
+  `,
+  warning: () => css`
+    background-color: #f5d18f;
+    border: 1px solid #d0a52f;
+  `,
+};
+
+export const MessageContainer = styled.div<MessageContainerProps>`
+  ${({ type }) => css`
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    color: #222;
+
+    ${type && messageContainerModifiers[type]}
+  `}
 `;

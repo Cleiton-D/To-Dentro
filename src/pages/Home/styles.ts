@@ -18,7 +18,7 @@ export const WelcomeText = styled.span`
   color: #4a86e8;
 `;
 
-export const AbouLink = styled(Link)`
+export const HelpLink = styled(Link)`
   position: fixed;
   bottom: 20px;
   right: 20px;
