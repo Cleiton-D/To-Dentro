@@ -25,9 +25,9 @@ const Help = (): JSX.Element => {
       <Header />
       <Container>
         <Title>Ajuda</Title>
-        {paragraphs.map(paragraph => (
-          <Text>{paragraph}</Text>
-        ))}
+        {paragraphs.length > 0
+          ? paragraphs.map(paragraph => <Text>{paragraph}</Text>)
+          : 'Carregando....'}
       </Container>
     </>
   );
