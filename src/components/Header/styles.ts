@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
+  position: fixed;
+  top: 0;
+
+  width: 100%;
   height: 80px;
   background-color: #f2f5fc;
   display: flex;
