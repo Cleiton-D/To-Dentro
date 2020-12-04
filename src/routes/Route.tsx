@@ -5,6 +5,8 @@ import {
   useHistory,
 } from 'react-router-dom';
 
+import Header from '../components/Header';
+
 import { useAuth } from '../hooks/auth';
 
 type RouteProps = ReactRouteProps & {
@@ -16,6 +18,15 @@ const Route = ({ isPrivate = false, ...rest }: RouteProps): JSX.Element => {
   const { location } = useHistory();
 
   if (isPrivate === !!username) {
+    if (isPrivate) {
+      return (
+        <>
+          <Header />
+          <ReactRoute {...rest} />
+        </>
+      );
+    }
+
     return <ReactRoute {...rest} />;
   }
 

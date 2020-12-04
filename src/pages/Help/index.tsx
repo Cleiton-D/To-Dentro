@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import Header from '../../components/Header';
-
 import { Container, Title, Text } from './styles';
 
 const Help = (): JSX.Element => {
@@ -21,15 +19,12 @@ const Help = (): JSX.Element => {
   }, []);
 
   return (
-    <>
-      <Header />
-      <Container>
-        <Title>Ajuda</Title>
-        {paragraphs.length > 0
-          ? paragraphs.map(paragraph => <Text>{paragraph}</Text>)
-          : 'Carregando....'}
-      </Container>
-    </>
+    <Container>
+      <Title>Ajuda</Title>
+      {paragraphs.length > 0
+        ? paragraphs.map(paragraph => <Text>{paragraph}</Text>)
+        : 'Carregando....'}
+    </Container>
   );
 };
 
