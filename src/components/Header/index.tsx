@@ -2,12 +2,14 @@ import { FiPower } from 'react-icons/fi';
 
 import Logo from '../Logo';
 
-import { Container, Content, LogoutButton, LogoutText } from './styles';
+import { Container, Content, Link, LogoutButton, LogoutText } from './styles';
 
 const Header = (): JSX.Element => (
   <Container>
     <Content>
-      <Logo />
+      <Link to="/home">
+        <Logo />
+      </Link>
       <LogoutButton>
         <FiPower size={20} />
         <LogoutText>Sair</LogoutText>

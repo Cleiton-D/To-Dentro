@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const Container = styled.header`
   position: fixed;
   top: 0;
-
   width: 100%;
   height: 80px;
   background-color: #f2f5fc;
@@ -21,6 +21,10 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+
+export const Link = styled(RouterLink)`
+  text-decoration: none;
 `;
 
 export const LogoutButton = styled.button`
